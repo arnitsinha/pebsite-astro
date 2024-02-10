@@ -1,15 +1,15 @@
-export function getCurrentTimeInEST(): Date {
+export function getCurrentTimeInItaly(): Date {
   // Create a date object with the current UTC time
   const now = new Date();
 
-  // Convert the UTC time to EST (UTC-5)
+  // Convert the UTC time to Eastern Standard Time (UTC-5)
   const offsetEST = -5;
   now.setHours(now.getUTCHours() + offsetEST);
 
   return now;
 }
 
-export function formatTimeForEST(date: Date): string {
+export function formatTimeForItaly(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     hour: "numeric",
     minute: "2-digit",
