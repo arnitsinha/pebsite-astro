@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "My Journey to Personalized Learning: A Revolution with the Learning Schedule Generator "
+title: "ACADEMAI"
 description: "Embark on a personal journey as I explore the transformative power of personalized learning with the Learning Schedule Generator. From setting goals to crafting customized schedules, discover how this innovative tool powered by AI and calendar integration has reshaped my learning experience. "
 pubDate: 2024-02-10
 category: "projects"
