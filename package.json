@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@astrojs/netlify": "^5.0.1",
+    "@astrojs/partytown": "^v0.9.1",
     "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/solid-js": "^4.0.1",
     "@iconify-json/ri": "^1.1.19",
-    "@astrojs/partytown" : "^v0.9.1",
-    "astro": "^4.3.2",
+    "astro": "^4.3.6",
     "astro-icon": "^1.1.0",
     "astro-robots-txt": "^1.0.0",
     "mdast-util-to-string": "^4.0.0",
@@ -24,16 +24,16 @@
     "solid-js": "^1.8.12"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@unocss/astro": "^0.58.5",
     "@unocss/postcss": "^0.58.5",
     "@unocss/preset-uno": "^0.58.5",
     "@unocss/reset": "^0.58.5",
     "autoprefixer": "^10.4.17",
-    "markdown-it": "^14.0.0",
     "d3": "^7.8.5",
+    "markdown-it": "^14.0.0",
     "motion": "^10.17.0",
     "sanitize-html": "^2.11.0",
-    "unocss": "^0.58.5",
-    "@types/d3": "^7.4.3"
+    "unocss": "^0.58.5"
   }
 }
