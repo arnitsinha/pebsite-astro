@@ -1,33 +1,3 @@
----
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import PostRow from "../../components/Blog/PostRow.astro";
-
-const posts = (await getCollection("blog")).sort(
-  (blogEntryA, blogEntryB) =>
-    blogEntryB.data.pubDate.getTime() - blogEntryA.data.pubDate.getTime()
-);
----
-
-<!-- Google tag (gtag.js) -->
-<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-3L21ZFG7DE"></script>
-<script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3L21ZFG7DE');
-</script>
-
-<script>
-  import { timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../../lib/constants";
-
-  const sequence = [loaderAnimation];
-
-  timeline(sequence as TimelineDefinition);
-</script>
-
 <Layout
   title="Arnit Sinha - Blog Posts"
 >
@@ -47,6 +17,8 @@ const posts = (await getCollection("blog")).sort(
             title={post.data.title}
             date={post.data.pubDate}
             url={post.slug}
+            // Apply style to limit the width of the title
+            style="max-width: 100%; overflow: hidden; text-overflow: ellipsis;"
           />
         ))
       }
