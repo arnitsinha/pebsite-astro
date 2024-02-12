@@ -22,7 +22,7 @@ export default defineConfig({
     }),
     solidJs(),
     UnoCSS({ injectReset: true }),
-    icon()
+    icon(),
     partytown({
       config: {
         forward: ["dataLayer.push"],
