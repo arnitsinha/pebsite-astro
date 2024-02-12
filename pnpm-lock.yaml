@@ -20,6 +20,9 @@ dependencies:
   '@iconify-json/ri':
     specifier: ^1.1.19
     version: 1.1.19
+  '@astrojs/partytown' :
+    specifier: ^0.9.1
+    version: 0.9.1
   astro:
     specifier: ^4.3.2
     version: 4.3.2
