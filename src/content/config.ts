@@ -5,4 +5,4 @@ const projects = defineCollection({
   schema: rssSchema,
 });
 
-export const collections = { projects };
+export const collections = { projects };  
