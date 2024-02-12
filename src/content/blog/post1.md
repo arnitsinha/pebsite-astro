@@ -44,4 +44,5 @@ One of the highlights of my experience was the seamless integration with Google 
 As I embarked on my personalized learning journey, I couldn't help but feel empowered. Gone were the days of aimless browsing and scattered study sessions. With a clear roadmap laid out before me, I approached each day with purpose and determination. Whether I was honing my coding skills or exploring new interests, the Learning Schedule Generator became my trusted companion, guiding me towards personal and professional growth.  
 <br />
 
-Are you ready to take control of your learning destiny?
+Are you ready to take control of your learning destiny?  
+<br />
