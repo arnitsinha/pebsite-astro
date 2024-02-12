@@ -3,6 +3,16 @@ import Globe from "../components/Globe";
 import BasicLayout from "../layouts/BasicLayout.astro";
 ---
 
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-3L21ZFG7DE"></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3L21ZFG7DE');
+</script>
+
 <script>
   import { timeline, type TimelineDefinition } from "motion";
 
@@ -18,7 +28,7 @@ import BasicLayout from "../layouts/BasicLayout.astro";
 </script>
 
 <BasicLayout
-  title="Gianmarco Cavallo - Visited Countries"
+  title="Arnit Sinha - Visited Countries"
   description="A 3d globe showing countries that I have visited so far"
   page="travel"
 
