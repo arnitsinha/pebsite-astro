@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/solid-js": "^4.0.1",
     "@iconify-json/ri": "^1.1.19",
-    "@astrojs/partytown" : "^1.0.0",
+    "@astrojs/partytown" : "^v0.9.1",
     "astro": "^4.3.2",
     "astro-icon": "^1.1.0",
     "astro-robots-txt": "^1.0.0",
