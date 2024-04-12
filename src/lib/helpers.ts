@@ -34,4 +34,3 @@ export function formatDate(date: Date): string {
     day: "numeric",
   });
 }
-
