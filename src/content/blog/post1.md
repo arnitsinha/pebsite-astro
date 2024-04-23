@@ -1,48 +1,88 @@
 ---
 layout: ../../layouts/LayoutBlogPost.astro
-title: "ACADEMAI"
-description: "Embark on a personal journey as I explore the transformative power of personalized learning with the Learning Schedule Generator. From setting goals to crafting customized schedules, discover how this innovative tool powered by AI and calendar integration has reshaped my learning experience. "
+title: "Streamlining My Digital Space: The Transition from Traditional HTML to Astro"
+description: "Dive into my journey of transforming my personal website from a static HTML labyrinth to a sleek, single-page application using Astro. Learn about the challenges I faced, the learning curve involved, and the benefits of making the switch."
 pubDate: 2024-02-10
 category: "projects"
 ---
 
-  
+**Welcome to the New Era of My Personal Website**
 
-**My Journey to Personalized Learning: A Revolution with the Learning Schedule Generator**  
+<br/>
+
+If you've visited my website before, you might notice something different this time around—everything's changed, and for the better! Gone are the days of navigating through a maze of HTML pages. Welcome to my newly revamped website, now powered by Astro, where fluidity and ease of access take the front seat.
+
 <br />
 
-Embark on a personal journey as I explore the transformative power of personalized learning with the Learning Schedule Generator. From setting goals to crafting customized schedules, discover how this innovative tool powered by AI and calendar integration has reshaped my learning experience.  
+**Why I Decided to Make the Switch**
+
 <br />
 
-**The Quest for Personalized Learning**  
+For the past three years, I've honed my skills in HTML, building websites that, while functional, increasingly felt rigid and disconnected. Each page loaded separately, and the site was bloating with content, making updates cumbersome and user navigation frustrating. It was clear I needed a change—to create a space that was not only dynamic but also consolidated and intuitive.
+
 <br />
 
-My journey with personalized learning began with a simple realization: one-size-fits-all approaches to learning no longer suffice in today's dynamic world. With goals ranging from mastering programming languages to delving into new hobbies, I yearned for a solution that could cater to my diverse interests and needs. That's when I discovered the Learning Schedule Generator—an ingenious blend of artificial intelligence and calendar integration designed to revolutionize the learning experience.  
+**The Challenges of Moving Away from HTML**
+
 <br />
 
-**Crafting My Customized Learning Journey**  
+HTML was my comfort zone, and stepping away from it meant venturing into unfamiliar territory. I had dabbled in NextJS, which gave me a taste of modern web development frameworks, but adopting Astro was a fresh challenge. Astro promised a seamless integration of components and static site generation, features that were attractive yet daunting for someone accustomed to the straightforwardness of HTML.
+
 <br />
 
-Armed with enthusiasm and a thirst for knowledge, I eagerly dove into the Learning Schedule Generator. The process was intuitive: I provided details about my learning goal, assessed my skill level, and specified the duration I could dedicate to my learning journey. With a click of a button, the generator sprung into action, leveraging the power of OpenAI's GPT-3 to curate a personalized learning schedule just for me.  
+**My Learning Journey with Astro**
+
 <br />
 
-**A Tailored Roadmap to Success**  
+Astro, while new, didn't take long to grasp. Its component-based structure was something I was partially familiar with thanks to my brief stint with NextJS. The real game changer, however, was how Astro handles loading—only the necessary components are loaded, which drastically speeds up the site and reduces bandwidth usage. Learning to implement this was not without its hurdles, but the Astro community and documentation were invaluable resources.
+
 <br />
 
-What truly set the Learning Schedule Generator apart was its ability to deliver more than just a list of tasks. Each item on my schedule came with detailed explanations, curated resources, and even relevant URLs to further enrich my learning experience. From beginner-friendly tutorials to advanced concepts, the schedule was tailored to my proficiency level, ensuring a smooth and engaging learning curve.  
+**The Fluidity and Efficiency of Astro**
+
 <br />
 
-**Seamlessly Integrated with Google Calendar**  
+One of the major benefits I've noticed since the switch is the fluidity of the website. It feels like a single, cohesive application rather than a collection of individual pages. This not only makes the website faster but also makes it much easier for visitors to interact with. Information is now readily available, and reaching out to me has never been simpler.
+
 <br />
 
-One of the highlights of my experience was the seamless integration with Google Calendar. With the click of a button, the generator populated my calendar with meticulously crafted events, complete with descriptions and links to resources. Not only did this streamline my learning process, but it also ensured that I stayed organized and on track with my goals.  
+**Integrating Images and Visuals**
+
 <br />
 
-**Empowering Personal Growth**  
+To enhance user engagement, I integrated various visuals throughout the site like a travel page that shows all the countries I have visited (more to come :p):
+
 <br />
 
-As I embarked on my personalized learning journey, I couldn't help but feel empowered. Gone were the days of aimless browsing and scattered study sessions. With a clear roadmap laid out before me, I approached each day with purpose and determination. Whether I was honing my coding skills or exploring new interests, the Learning Schedule Generator became my trusted companion, guiding me towards personal and professional growth.  
+<img src="/public/blog1/2.png" alt="Travel section of the website" class="w-full max-w-4xl mx-auto my-4">  
+
 <br />
 
-Are you ready to take control of your learning destiny?  
+Here's a visual of the old website design:
+
 <br />
+
+<img src="/public/blog1/1.jpg" alt="Cluttered layout of the old website" class="w-full max-w-4xl mx-auto my-4">
+
+<br />
+
+Code Snippets from the New Website
+
+<br />
+
+Let's take a look at some of the code that powers the new site. Here’s a snippet showing how components are loaded in Astro, with animations to make it look smoother:
+
+<br />
+
+<img src="/public/blog1/3.png" alt="Animate cards code for the new website" class="w-full max-w-4xl mx-auto my-4">
+
+<br />
+
+Looking Forward
+
+<br />
+
+This overhaul was a significant step out of my comfort zone, but it has been incredibly rewarding. The new website not only looks better but functions more effectively, providing a user-friendly experience that aligns with modern web standards. The journey from HTML to Astro has taught me the importance of adaptability and the benefits of embracing new technologies.
+
+<br />
+
