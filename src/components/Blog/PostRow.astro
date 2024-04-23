@@ -12,14 +12,15 @@ const { title, date, url } = Astro.props;
 
 <li class="w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-2">
   <a
-    class="text-sm md:text-base decoration-none flex justify-between"
+    class="text-sm md:text-base decoration-none flex justify-between items-center"
     href={`/blog/${url}`}
+    style={{ overflow: 'hidden' }}  
   >
-    <p class="inline-block whitespace-nowrap">
+    <p class="flex-1 min-w-0 mr-3">  
       {title}
     </p>
     <time
-      class="text-right tabular-nums"
+      class="whitespace-nowrap text-right tabular-nums shrink-0"  
       datetime={date.toISOString()}
       data-date={date.toISOString()}
     >
@@ -27,3 +28,4 @@ const { title, date, url } = Astro.props;
     </time>
   </a>
 </li>
+
