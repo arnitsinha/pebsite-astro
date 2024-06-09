@@ -11,27 +11,5 @@ import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://arnitsinha.com",
-  integrations: [
-    sitemap(),
-    robotsTxt({
-      sitemap: [
-        "https://arnitsinha.com/sitemap-index.xml",
-        "https://arnitsinha.com/sitemap-0.xml",
-      ],
-    }),
-    solidJs(),
-    UnoCSS({ injectReset: true }),
-    icon(),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    })
-  ],
-  markdown: {
-    remarkPlugins: [remarkReadingTime],
-  },
-  output: "server",
-  adapter: netlify(),
+  site: 'https://arnitsinha.com',
 });
