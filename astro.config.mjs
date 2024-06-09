@@ -31,7 +31,4 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
-  adapter: netlify(),
-  site: 'https://arnitsinha.com',
 });
