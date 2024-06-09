@@ -60,12 +60,55 @@ const GlobeComponent = () => {
       .style("stroke-width", 0.3)
       .style("opacity", 0.8);
 
-    d3.timer(() => {
+    let lastX: number, lastY: number, isDragging = false;
+
+    const onDragStart = (event: MouseEvent | TouchEvent) => {
+      isDragging = true;
+      const { clientX, clientY } = getEventPoint(event);
+      lastX = clientX;
+      lastY = clientY;
+    };
+
+    const onDrag = (event: MouseEvent | TouchEvent) => {
+      if (!isDragging) return;
+
+      const { clientX, clientY } = getEventPoint(event);
+      const dx = clientX - lastX;
+      const dy = clientY - lastY;
+
       const rotate = projection.rotate();
       const k = sensitivity / projection.scale();
-      projection.rotate([rotate[0] - 1 * k, rotate[1]]);
+
+      projection.rotate([rotate[0] + dx * k, rotate[1] - dy * k]);
       svg.selectAll("path").attr("d", (d: any) => pathGenerator(d as any));
-    }, 200);
+
+      lastX = clientX;
+      lastY = clientY;
+    };
+
+    const onDragEnd = () => {
+      isDragging = false;
+    };
+
+    const getEventPoint = (event: MouseEvent | TouchEvent) => {
+      if ('touches' in event) {
+        return {
+          clientX: event.touches[0].clientX,
+          clientY: event.touches[0].clientY,
+        };
+      } else {
+        return {
+          clientX: event.clientX,
+          clientY: event.clientY,
+        };
+      }
+    };
+
+    svg
+      .on("mousedown touchstart", onDragStart)
+      .on("mousemove touchmove", onDrag)
+      .on("mouseup touchend", onDragEnd);
+
   });
 
   return (
