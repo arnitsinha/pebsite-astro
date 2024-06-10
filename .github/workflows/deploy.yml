@@ -39,4 +39,4 @@ jobs:
         with:
           project: "arnitport"
           entrypoint: "server/entry.mjs"
-          root: "dist"
+          root: ""
