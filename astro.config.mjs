@@ -36,5 +36,4 @@ export default defineConfig({
   },
   adapter: nodeAdapter(),
   output: 'server',
-  site: 'https://arnitsinha.com',
 });
