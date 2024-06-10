@@ -6,7 +6,6 @@ import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import partytown from '@astrojs/partytown';
 import solidJs from "@astrojs/solid-js";
-import nodeAdapter from '@astrojs/node';
 
 import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
@@ -34,6 +33,6 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  adapter: nodeAdapter(),
+  adapter: netlify(),
   output: 'server',
 });
