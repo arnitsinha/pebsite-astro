@@ -6,7 +6,6 @@ import UnoCSS from "@unocss/astro";
 import icon from "astro-icon";
 import partytown from '@astrojs/partytown';
 import solidJs from "@astrojs/solid-js";
-import imageEndpoint from 'astro-https-image-endpoint';
 import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
 // https://astro.build/config
@@ -31,8 +30,5 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [remarkReadingTime],
-  },
-  image: {
-    endpoint: imageEndpoint(import.meta.env.DEV),
   },
 });
