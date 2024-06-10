@@ -32,4 +32,5 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime],
   },
   output: "server",
+  adapter: node(),
 });
