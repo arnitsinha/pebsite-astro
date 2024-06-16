@@ -4,6 +4,7 @@ export const LINKS = {
   medium: "",
   discord: "https://discordapp.com/users/163300027618295808",
   dribble: "",
+  resume: "",
 };
 
 export const loaderAnimation = [
