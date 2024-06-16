@@ -5,6 +5,7 @@ interface Props {
   page?: "travel";
 }
 
+const fs = require('graceful-fs');
 const { title, description, page } = Astro.props;
 const image =
   page === "travel"
