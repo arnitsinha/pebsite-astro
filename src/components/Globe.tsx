@@ -24,9 +24,9 @@ const GlobeComponent = () => {
 
     rotationInterval = setInterval(() => {
       const rotate = projection.rotate();
-      projection.rotate([rotate[0] + 0.5, rotate[1]]);
+      projection.rotate([rotate[0] + 0.1, rotate[1]]); // Smaller increment for smoother rotation
       svg.selectAll("path").attr("d", (d: any) => d3.geoPath().projection(projection)(d));
-    }, 100); // Adjust speed as needed
+    }, 50); // Shorter interval for smoother updates
   };
 
   const stopRotation = () => {

@@ -36,10 +36,11 @@ function Tooltip(props: Props) {
 
   const currentMessage = () => {
     const count = clickCount();
-    if (count >= messages.length) {
+    if (count === messages.length) {
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
       return messages[messages.length - 1];
     }
-    return messages[count];
+    return count < messages.length ? messages[count] : messages[messages.length - 1];
   };
 
   return (
