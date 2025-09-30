@@ -10,7 +10,9 @@ const GlobeComponent = () => {
     "United States",
     "Canada",
     "Australia",
-    "New Zealand"
+    "New Zealand",
+    "China",
+    "Japan"
   ];
 
   let rotationInterval: NodeJS.Timeout | undefined;
@@ -149,7 +151,7 @@ const GlobeComponent = () => {
 
   return (
     <div class="flex flex-col text-white justify-center items-center w-full h-full">
-      <div class="w-full" ref={mapContainer}></div>
+      <div class="w-full flex justify-center" ref={mapContainer}></div>
     </div>
   );
 };

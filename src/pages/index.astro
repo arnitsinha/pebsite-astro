@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card/index.astro";
 import IntroCard from "../components/IntroCard.astro";
-import ContactsCard from "../components/ContactsCard.astro";
 import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Now from "../components/Now.astro";
@@ -46,21 +45,20 @@ import Globe from "../components/Globe";
   description="Software developer with strong focus on AI based programs"
 >
   <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full grid-cols-1 sm:p-4 sm:gap-3 sm:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-full lg:overflow-hidden"
   >
     <IntroCard />
     <AboutMe />
-    <ContactsCard />
     <TimeZone />
     <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-2"
+      colSpan="col-span-1 sm:col-span-1 md:col-span-1"
+      rowSpan="row-span-1 md:row-span-2"
       title="Blog"
       href="/blog"
     />
     <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
+      colSpan="col-span-1 sm:col-span-2 md:col-span-1"
+      rowSpan="row-span-1 md:row-span-2"
       title="Countries I visited"
       href="travel"
       colorText="text-neutral-900"
@@ -69,11 +67,27 @@ import Globe from "../components/Globe";
         <Globe client:load />
       </div>
     </Card>
+    <Card 
+      colSpan="col-span-1 sm:col-span-1 md:col-span-1" 
+      rowSpan="row-span-1 md:row-span-2" 
+      title="Resume"
+      href="/Resume.pdf"
+    >
+    </Card>
+    <Card 
+      colSpan="col-span-1 sm:col-span-1 md:col-span-1" 
+      rowSpan="row-span-1 md:row-span-2" 
+      title="Contact"
+      href="mailto:hey@arnitsinha.com"
+    >
+    </Card>
     <Now />
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <p class="text-xs text-center">
-        © 2024 · Crafted with ♥️ by Arnit Sinha
-      </p>
+    <Card colSpan="col-span-1 sm:col-span-2 md:col-span-4" rowSpan="row-span-1">
+      <div class="flex items-center justify-center h-full">
+        <p class="text-xs text-center">
+          © 2025 · Crafted with ♥️ by Arnit Sinha
+        </p>
+      </div>
     </Card>
   </main>
 </Layout>
