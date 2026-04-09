@@ -3,7 +3,7 @@ import { defineConfig, presetUno, presetWebFonts } from "unocss";
 
 export default defineConfig({
   content: {
-    filesystem: ["**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}"],
+    filesystem: ["src/**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}", "*.astro"],
   },
   theme: {
     boxShadow: {
