@@ -9,17 +9,24 @@ import solidJs from "@astrojs/solid-js";
 
 import { remarkReadingTime } from "./src/lib/ remark-reading-time.mjs";
 
+const siteUrl = process.env.SITE || "https://arnitport.netlify.app";
+const enableSitemap = process.env.NETLIFY !== "true";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://arnitport.netlify.app",
+  site: siteUrl,
   mode: "production",
   integrations: [
-    sitemap(),
+    ...(enableSitemap ? [sitemap()] : []),
     robotsTxt({
-      sitemap: [
-        "https://arnitport.netlify.app/sitemap-index.xml",
-        "https://arnitport.netlify.app/sitemap-0.xml",
-      ],
+      ...(enableSitemap
+        ? {
+            sitemap: [
+              `${siteUrl}/sitemap-index.xml`,
+              `${siteUrl}/sitemap-0.xml`,
+            ],
+          }
+        : {}),
     }),
     solidJs(),
     UnoCSS({ injectReset: true }),
