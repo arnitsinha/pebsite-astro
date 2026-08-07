@@ -9,31 +9,56 @@ interface Props {
   rowSpan?: string;
   href?: string;
   colorText?: string;
+  class?: string;
 }
 
-const { title, body, colSpan, rowSpan, href, colorText } = Astro.props;
+const {
+  title,
+  body,
+  colSpan,
+  rowSpan,
+  href,
+  colorText,
+  class: className,
+} = Astro.props;
 ---
 
+<!-- The outer element carries the grid placement and the entrance animation;
+     the inner one owns every hover effect, so the two never fight over
+     the same transform. -->
 <div
-  class={`card group overflow-hidden transfor-y-[-40%] bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto ${
-    colSpan || "md:col-span-2"
-  } ${rowSpan || ""}`}
+  class={`card col-span-1 h-auto w-full ${colSpan || "sm:col-span-2"} ${
+    rowSpan || ""
+  } ${className || ""}`}
 >
-  {
-    href ? (
-      <a href={href} class={`h-full w-full ${colorText || " "}`}>
-        <Icon
-          name="ri:arrow-right-up-line"
-          class="h-6 float-right group-hover:text-primary-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100 z-20"
-        />
+  <div
+    class="card-inner group relative h-full w-full overflow-hidden rounded-lg border border-transparent bg-darkslate-500 p-4 shadow-lg hover:border-purple-500 sm:p-6"
+  >
+    {
+      href ? (
+        <a href={href} class={`relative h-full w-full ${colorText || " "}`}>
+          <Icon
+            name="ri:arrow-right-up-line"
+            class="h-6 float-right group-hover:text-purple-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all ease-out duration-200 z-20"
+          />
+          <Content title={title} body={body}>
+            <slot />
+          </Content>
+        </a>
+      ) : (
         <Content title={title} body={body}>
           <slot />
         </Content>
-      </a>
-    ) : (
-      <Content title={title} body={body}>
-        <slot />
-      </Content>
-    )
-  }
+      )
+    }
+  </div>
 </div>
+
+<style>
+  .card-inner {
+    /* translateZ keeps the stacking context that lets `-z-10` slot content
+       (the globe) paint above the card background instead of behind it. */
+    transform: translateZ(0);
+    transition: border-color 200ms ease;
+  }
+</style>

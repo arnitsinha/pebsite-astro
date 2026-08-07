@@ -44,6 +44,18 @@ export default defineConfig({
         800: "#0E0E0E",
         900: "#0B0B0B" /* Deeper and darker */,
       },
+      purple: {
+        100: "#EDE9FE",
+        200: "#DDD6FE",
+        300: "#C4B5FD",
+        400: "#A78BFA",
+        500: "#8B5CF6",
+        600: "#7C3AED",
+        700: "#6D28D9",
+        800: "#5B21B6",
+        900: "#4C1D95",
+        950: "#2E1D5C" /* Muted outline against the dark background */,
+      },
       primary: {
         100: "#F9CDD3",
         200: "#F3A3AA",

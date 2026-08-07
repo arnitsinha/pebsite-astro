@@ -10,17 +10,17 @@ interface Props {
 const { title, date, url } = Astro.props;
 ---
 
-<li class="w-full text-neutral-100 hover:text-neutral-400 ease-in-out transition-colors border-b-neutral-400 border-dashed border-b-1 my-2">
+<li class="group w-full text-neutral-100 hover:text-purple-300 ease-out transition-colors duration-200 border-b-neutral-400 border-dashed border-b-1 my-2">
   <a
-    class="text-sm md:text-base decoration-none flex justify-between items-center"
+    class="text-sm md:text-base decoration-none flex justify-between items-center py-2"
     href={`/blog/${url}`}
-    style={{ overflow: 'hidden' }}  
+    style={{ overflow: 'hidden' }}
   >
-    <p class="flex-1 min-w-0 mr-3">  
+    <p class="flex-1 min-w-0 mr-3">
       {title}
     </p>
     <time
-      class="whitespace-nowrap text-right tabular-nums shrink-0"  
+      class="whitespace-nowrap text-right tabular-nums shrink-0 text-gray-500"
       datetime={date.toISOString()}
       data-date={date.toISOString()}
     >

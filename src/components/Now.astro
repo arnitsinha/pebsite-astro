@@ -1,9 +1,10 @@
 ---
 import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
+import { LINKS } from "../lib/constants";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
+<Card colSpan="col-span-1 sm:col-span-1" rowSpan="row-span-1 lg:row-span-2">
   <div class="flex justify-between w-full items-start mb-2">
     <div class="flex flex-col">
       <h2>Now</h2>
@@ -13,5 +14,13 @@ import Pulse from "./Pulse.astro";
     </div>
     <Pulse />
   </div>
-  <p class="text-xs">Finishing up my bachelor's at Clarkson :)</p>
+  <p class="text-xs">
+    Finding bugs and engineering automations at <a
+      href={LINKS.ashby}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-purple-400 hover:text-purple-300 underline underline-offset-2 decoration-purple-400/50 transition-colors duration-200"
+      >Ashby</a
+    > :)
+  </p>
 </Card>

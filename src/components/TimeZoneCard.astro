@@ -28,7 +28,11 @@ import Card from "./Card/index.astro";
   });
 </script>
 
-<Card colSpan="lg:col-span-2" rowSpan="md:row-span-2" title="Time zone">
+<Card
+  colSpan="col-span-1 sm:col-span-1 lg:col-span-2"
+  rowSpan="row-span-1 lg:row-span-2"
+  title="Time zone"
+>
   <time
     datetime=""
     id="timeDisplay"

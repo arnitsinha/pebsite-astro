@@ -35,9 +35,22 @@ import BasicLayout from "../layouts/BasicLayout.astro";
 >
   <a
     href="/"
-    class="text-white absolute bg-neutral-900 hover:bg-neutral-800 top-4 left-4 px-4 py-2 border-1 border-solid border-neutral-600 rounded-lg"
+    class="text-white fixed z-10 bg-neutral-900 hover:bg-neutral-800 top-4 left-4 px-4 py-2 border-1 border-solid border-purple-500 rounded-lg"
     >Back</a
   >
 
-  <Globe client:load />
+  <div class="w-full h-[100dvh] flex justify-center items-center">
+    <Globe client:load interactive={true} />
+  </div>
 </BasicLayout>
+
+<!-- The globe is dragged directly, so the page itself must not scroll or
+     bounce underneath it. Scoped to this page only. -->
+<style is:global>
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+</style>

@@ -19,23 +19,30 @@ import Globe from "../components/Globe";
 </script>
 
 <script>
-  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../lib/constants";
-  const cards = document.querySelectorAll(".card");
+  import { stagger, timeline, type TimelineDefinition } from "motion";
+  import { easeOutExpo, loaderAnimation } from "../lib/constants";
 
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ];
+  const cards = document.querySelectorAll(".card");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // With reduced motion the cards simply appear; only the loader fades.
+  const sequence = prefersReducedMotion
+    ? [loaderAnimation]
+    : [
+        loaderAnimation,
+        [
+          cards,
+          { opacity: [0, 1], y: [16, 0] },
+          {
+            at: "-0.35",
+            duration: 0.5,
+            delay: stagger(0.06),
+            easing: easeOutExpo,
+          },
+        ],
+      ];
 
   timeline(sequence as TimelineDefinition);
 </script>
@@ -45,20 +52,21 @@ import Globe from "../components/Globe";
   description="Software developer with strong focus on AI based programs"
 >
   <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full grid-cols-1 sm:p-4 sm:gap-3 sm:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-full lg:overflow-hidden"
+    class="text-white m-auto p-2 grid gap-2 max-w-6xl relative w-full grid-cols-1 sm:p-4 sm:gap-3 sm:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-9 lg:grid-cols-4 lg:gap-4 lg:max-h-full lg:overflow-hidden"
   >
     <IntroCard />
     <AboutMe />
     <TimeZone />
     <Card
-      colSpan="col-span-1 sm:col-span-1 md:col-span-1"
-      rowSpan="row-span-1 md:row-span-2"
+      colSpan="col-span-1 sm:col-span-1"
+      rowSpan="row-span-1 lg:row-span-2"
       title="Blog"
       href="/blog"
     />
     <Card
-      colSpan="col-span-1 sm:col-span-2 md:col-span-1"
-      rowSpan="row-span-1 md:row-span-2"
+      colSpan="col-span-1 sm:col-span-2"
+      rowSpan="row-span-1 lg:row-span-2"
+      class="min-h-[220px] lg:min-h-0"
       title="Countries I visited"
       href="travel"
       colorText="text-neutral-900"
@@ -67,25 +75,18 @@ import Globe from "../components/Globe";
         <Globe client:load />
       </div>
     </Card>
-    <Card 
-      colSpan="col-span-1 sm:col-span-1 md:col-span-1" 
-      rowSpan="row-span-1 md:row-span-2" 
-      title="Resume"
-      href="/Resume.pdf"
-    >
-    </Card>
-    <Card 
-      colSpan="col-span-1 sm:col-span-1 md:col-span-1" 
-      rowSpan="row-span-1 md:row-span-2" 
+    <Card
+      colSpan="col-span-1 sm:col-span-1"
+      rowSpan="row-span-1 lg:row-span-2"
       title="Contact"
       href="mailto:hey@arnitsinha.com"
     >
     </Card>
     <Now />
-    <Card colSpan="col-span-1 sm:col-span-2 md:col-span-4" rowSpan="row-span-1">
+    <Card colSpan="col-span-1 sm:col-span-2 lg:col-span-4" rowSpan="row-span-1">
       <div class="flex items-center justify-center h-full">
         <p class="text-xs text-center">
-          © 2025 · Crafted with ♥️ by Arnit Sinha
+          © 2026 · Crafted with ♥️ by Arnit Sinha
         </p>
       </div>
     </Card>
